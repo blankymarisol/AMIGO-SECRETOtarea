@@ -15,6 +15,10 @@ function agregarAmigo() {
     //agregar el nombre a la lista
     listaAmigos.push(nombre);
 
+    //muestra en la consola el nombre agregado y la lista actualizada
+    console.log('Nuevo amigo agregado: ', nombre);
+    console.log('Lista de amigos actualizada: ', listaAmigos);
+
     //limpiar el input
     inputAmigo.value = '';
 
