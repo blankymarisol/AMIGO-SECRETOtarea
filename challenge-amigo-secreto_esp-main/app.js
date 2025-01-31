@@ -38,6 +38,29 @@ function actualizarListaAmigos() {
     });
 }
 
+//funcion para sortear los amigos
+function sortearAmigo(){
+    //validar que haya amigos disponibles
+    if (listaAmigos.length === 0){
+        alert('No hay amigos para sortear');
+        return;
+    }
+
+    //generar un indice aleatorio
+    const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
+
+    //obtener el amigo secreto
+    const nombreSorteado = listaAmigos[indiceAleatorio];
+
+    //mostar el amigo secreto en pantalla
+    const resultadoElemento = document.getElementById('resultado');
+    resultadoElemento.innerHTML = '';
+
+    const li = document.createElement('li');
+    li.textContent = `El amigo secreto es: ${nombreSorteado}`;
+    resultadoElemento.appendChild(li);
+}
+
 //agregar la funcion de escuchar la tecla Enter
 document.getElementById('amigo').addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
